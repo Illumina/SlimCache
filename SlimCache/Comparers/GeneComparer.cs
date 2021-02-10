@@ -7,6 +7,8 @@ namespace SlimCache.Comparers
     {
         public override bool Equals(IGene x, IGene y)
         {
+            if (ReferenceEquals(x, y)) return true;
+            if (x == null || y == null) return false;
             return x.Start                    == y.Start                    &&
                    x.End                      == y.End                      &&
                    x.Chromosome.Index         == y.Chromosome.Index         &&

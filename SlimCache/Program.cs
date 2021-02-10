@@ -2,9 +2,7 @@
 using System.IO;
 using CommandLine.Utilities;
 using VariantAnnotation.Caches;
-using VariantAnnotation.Caches.DataStructures;
 using VariantAnnotation.Interface.AnnotatedPositions;
-using VariantAnnotation.IO.Caches;
 
 namespace SlimCache
 {

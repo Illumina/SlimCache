@@ -24,14 +24,14 @@ namespace SlimCache
             using var polyphenReader =
                 new PredictionCacheReader(polyphenStream, PredictionCacheReader.PolyphenDescriptions);
 
-            var unusedPrediction = new Prediction(new byte[0], null);
+            var unusedPrediction = new Prediction(Array.Empty<byte>(), null);
             
             int numRefSeqs = cacheData.TranscriptIntervalArrays.Length;
 
             var siftPredictionsPerRef     = new Prediction[numRefSeqs][];
             var polyphenPredictionsPerRef = new Prediction[numRefSeqs][];
             
-            Console.Write($"- removing duplicate predictions... ");
+            Console.Write("- removing duplicate predictions... ");
             var numPredictionsFiltered = 0;
             
             for (ushort refIndex = 0; refIndex < numRefSeqs; refIndex++)
@@ -69,7 +69,7 @@ namespace SlimCache
             }
 
             var numFiltered = 0;
-            for (int predictionIndex = 0; predictionIndex < predictions.Length; predictionIndex++)
+            for (var predictionIndex = 0; predictionIndex < predictions.Length; predictionIndex++)
             {
                 if (usedPredictions.Contains(predictionIndex)) continue;
                 predictions[predictionIndex] = unusedPrediction;

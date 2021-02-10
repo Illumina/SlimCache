@@ -17,7 +17,7 @@ namespace SlimCache
             Console.Write("- filtering transcripts... ");
 
             int numRefSeqs  = cacheData.TranscriptIntervalArrays.Length;
-            int numFiltered = 0;
+            var numFiltered = 0;
 
             var intervalComparer         = new IntervalComparer();
             var transcriptRegionComparer = new TranscriptRegionComparer();
@@ -96,7 +96,7 @@ namespace SlimCache
                                                  ITranscriptRegion[]        regions)
         {
             if (regions == null) return;
-            foreach (var region in regions) transcriptRegionSet.Add(region);
+            foreach (ITranscriptRegion region in regions) transcriptRegionSet.Add(region);
         }
 
         private static void AddString(HashSet<string> stringSet, string s)

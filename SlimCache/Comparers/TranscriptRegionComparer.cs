@@ -8,15 +8,20 @@ namespace SlimCache.Comparers
         public override bool Equals(ITranscriptRegion x, ITranscriptRegion y)
         {
             if (ReferenceEquals(x, y)) return true;
-            return x.Type == y.Type && x.Id == y.Id && x.Start == y.Start && x.End == y.End &&
-                   x.CdnaStart == y.CdnaStart && x.CdnaEnd == y.CdnaEnd;
+            if (x == null || y == null) return false;
+            return x.Type      == y.Type      &&
+                   x.Id        == y.Id        &&
+                   x.Start     == y.Start     &&
+                   x.End       == y.End       &&
+                   x.CdnaStart == y.CdnaStart &&
+                   x.CdnaEnd   == y.CdnaEnd;
         }
 
         public override int GetHashCode(ITranscriptRegion obj)
         {
             unchecked
             {
-                var hashCode = (int)obj.Type;
+                var hashCode = (int) obj.Type;
                 hashCode = (hashCode * 397) ^ obj.Id.GetHashCode();
                 hashCode = (hashCode * 397) ^ obj.Start;
                 hashCode = (hashCode * 397) ^ obj.End;
