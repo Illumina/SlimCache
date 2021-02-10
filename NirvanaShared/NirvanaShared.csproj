@@ -1,0 +1,139 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<OutputPath>..\bin\$(Configuration)</OutputPath>
+  </PropertyGroup>
+    <ItemGroup>
+		<Compile Include="..\Nirvana\CacheUtils\DataDumperImport\DataStructures\GenomeSymbolSource.cs" Link="CacheUtils\GeneSymbolSource.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\DataDumperImport\DataStructures\Mutable\MutableExon.cs" Link="CacheUtils\MutableExon.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\DataDumperImport\DataStructures\Mutable\MutableGene.cs" Link="CacheUtils\MutableGene.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\DataDumperImport\DataStructures\Mutable\MutableTranscript.cs" Link="CacheUtils\MutableTranscript.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\DataDumperImport\DataStructures\Mutable\MutableTranscriptRegion.cs" Link="CacheUtils\MutableTranscriptRegion.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\Genes\DataStructures\IFlatGene.cs" Link="CacheUtils\IFlatGene.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\Genes\Utilities\DictionaryUtilities.cs" Link="CacheUtils\DictionaryUtilities.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\IntermediateIO\IntermediateIoCommon.cs" Link="CacheUtils\IntermediateIoCommon.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\IntermediateIO\IntermediateIoHeader.cs" Link="CacheUtils\IntermediateIoHeader.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\IntermediateIO\PredictionReader.cs" Link="CacheUtils\PredictionReader.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\MiniCache\IStaging.cs" Link="MiniCache\IStaging.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\PredictionCache\PredictionCacheBuilder.cs" Link="CacheUtils\PredictionCacheBuilder.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\PredictionCache\PredictionCacheStaging.cs" Link="CacheUtils\PredictionCacheStaging.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\PredictionCache\PredictionCacheWriter.cs" Link="CacheUtils\PredictionCacheWriter.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\PredictionCache\PredictionExtensions.cs" Link="CacheUtils\PredictionExtensions.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\PredictionCache\RoundedEntry.cs" Link="CacheUtils\RoundedEntry.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\PredictionCache\RoundedEntryPrediction.cs" Link="CacheUtils\RoundedEntryPrediction.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\TranscriptCache\SortExtensions.cs" Link="CacheUtils\SortExtensions.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\TranscriptCache\TranscriptCacheWriter.cs" Link="CacheUtils\TranscriptCacheWriter.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\TranscriptCache\Comparers\GeneComparer.cs" Link="CacheUtils\GeneComparer.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\TranscriptCache\Comparers\IntervalComparer.cs" Link="CacheUtils\IntervalComparer.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\TranscriptCache\Comparers\TranscriptRegionComparer.cs" Link="CacheUtils\TranscriptRegionComparer.cs" />
+		<Compile Include="..\Nirvana\CacheUtils\Utilities\HeaderUtilities.cs" Link="CacheUtils\HeaderUtilities.cs" />
+		<Compile Include="..\Nirvana\CommandLine\Utilities\MemoryUtilities.cs" Link="Utilities\MemoryUtilities.cs" />
+		<Compile Include="..\Nirvana\Compression\Algorithms\ICompressionAlgorithm.cs" Link="Compression\ICompressionAlgorithm.cs" />
+		<Compile Include="..\Nirvana\Compression\Algorithms\Zlib.cs" Link="Compression\Zlib.cs" />
+		<Compile Include="..\Nirvana\Compression\Algorithms\Zstandard.cs" Link="Compression\Zstandard.cs" />
+		<Compile Include="..\Nirvana\Compression\DataStructures\Block.cs" Link="Compression\Block.cs" />
+		<Compile Include="..\Nirvana\Compression\FileHandling\BlockGZipStream.cs" Link="Compression\BlockGZipStream.cs" />
+		<Compile Include="..\Nirvana\Compression\FileHandling\BlockHeader.cs" Link="Compression\BlockHeader.cs" />
+		<Compile Include="..\Nirvana\Compression\FileHandling\BlockStream.cs" Link="Compression\BlockStream.cs" />
+		<Compile Include="..\Nirvana\Compression\Utilities\GZipUtilities.cs" Link="Compression\GZipUtilities.cs" />
+		<Compile Include="..\Nirvana\Compression\Utilities\LibraryUtilities.cs" Link="Compression\LibraryUtilities.cs" />
+		<Compile Include="..\Nirvana\ErrorHandling\Exceptions\CompressionException.cs" Link="ErrorHandling\CompressionException.cs" />
+		<Compile Include="..\Nirvana\ErrorHandling\Exceptions\InvalidFileFormatException.cs" Link="ErrorHandling\InvalidFileFormatException.cs" />
+		<Compile Include="..\Nirvana\ErrorHandling\Exceptions\MissingCompressionLibraryException.cs" Link="ErrorHandling\MissingCompressionLibraryException.cs" />
+		<Compile Include="..\Nirvana\ErrorHandling\Exceptions\ProcessLockedFileException.cs" Link="ErrorHandling\ProcessLockedFileException.cs" />
+		<Compile Include="..\Nirvana\Genome\Band.cs" Link="Genome\Band.cs" />
+		<Compile Include="..\Nirvana\Genome\Chromosome.cs" Link="Genome\Chromosome.cs" />
+		<Compile Include="..\Nirvana\Genome\CytogeneticBands.cs" Link="Genome\CytogeneticBands.cs" />
+		<Compile Include="..\Nirvana\Genome\EmptyChromosome.cs" Link="Genome\EmptyChromosome.cs" />
+		<Compile Include="..\Nirvana\Genome\GenomeAssembly.cs" Link="Genome\GenomeAssembly.cs" />
+		<Compile Include="..\Nirvana\Genome\IChromosome.cs" Link="Genome\IChromosome.cs" />
+		<Compile Include="..\Nirvana\Genome\IChromosomeInterval.cs" Link="Genome\IChromosomeInterval.cs" />
+		<Compile Include="..\Nirvana\Genome\ISequence.cs" Link="Genome\ISequence.cs" />
+		<Compile Include="..\Nirvana\Genome\ReferenceNameUtilities.cs" Link="Genome\ReferenceNameUtilities.cs" />
+		<Compile Include="..\Nirvana\Intervals\Extensions.cs" Link="Intervals\Extensions.cs" />
+        <Compile Include="..\Nirvana\Intervals\IInterval.cs" Link="Intervals\IInterval.cs" />
+		<Compile Include="..\Nirvana\Intervals\IIntervalForest.cs" Link="Intervals\IIntervalForest.cs" />
+		<Compile Include="..\Nirvana\Intervals\IIntervalSearch.cs" Link="Intervals\IIntervalSearch.cs" />
+		<Compile Include="..\Nirvana\Intervals\Interval.cs" Link="Intervals\Interval.cs" />
+		<Compile Include="..\Nirvana\Intervals\IntervalArray.cs" Link="Intervals\IntervalArray.cs" />
+		<Compile Include="..\Nirvana\Intervals\IntervalForest.cs" Link="Intervals\IntervalForest.cs" />
+		<Compile Include="..\Nirvana\Intervals\OverlapType.cs" Link="Intervals\OverlapType.cs" />
+		<Compile Include="..\Nirvana\Intervals\Utilities.cs" Link="Intervals\Utilities.cs" />
+		<Compile Include="..\Nirvana\IO\BufferedBinaryReader.cs" Link="IO\BufferedBinaryReader.cs" />
+		<Compile Include="..\Nirvana\IO\CacheConstants.cs" Link="IO\CacheConstants.cs" />
+		<Compile Include="..\Nirvana\IO\ExtendedBinaryReader.cs" Link="IO\ExtendedBinaryReader.cs" />
+		<Compile Include="..\Nirvana\IO\ExtendedBinaryWriter.cs" Link="IO\ExtendedBinaryWriter.cs" />
+		<Compile Include="..\Nirvana\IO\FileUtilities.cs" Link="IO\FileUtilities.cs" />
+		<Compile Include="..\Nirvana\IO\IBufferedBinaryReader.cs" Link="IO\IBufferedBinaryReader.cs" />
+		<Compile Include="..\Nirvana\IO\IExtendedBinaryWriter.cs" Link="IO\IExtendedBinaryWriter.cs" />
+		<Compile Include="..\Nirvana\IO\ISerializable.cs" Link="IO\ISerializable.cs" />
+		<Compile Include="..\Nirvana\IO\Logger.cs" Link="IO\Logger.cs" />
+		<Compile Include="..\Nirvana\OptimizedCore\StringExtensions.cs" Link="OptimizedCore\StringExtensions.cs" />
+		<Compile Include="..\Nirvana\ReferenceSequence\ReferenceSequenceCommon.cs" Link="ReferenceSequence\ReferenceSequenceCommon.cs" />
+		<Compile Include="..\Nirvana\ReferenceSequence\Common\IndexEntry.cs" Link="ReferenceSequence\IndexEntry.cs" />
+		<Compile Include="..\Nirvana\ReferenceSequence\Common\MaskedEntry.cs" Link="ReferenceSequence\MaskedEntry.cs" />
+		<Compile Include="..\Nirvana\ReferenceSequence\Common\Sequence.cs" Link="ReferenceSequence\Sequence.cs" />
+		<Compile Include="..\Nirvana\ReferenceSequence\IO\ReferenceSequenceReader.cs" Link="ReferenceSequence\ReferenceSequenceReader.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\AnnotatedPositions\Transcript\CompactId.cs" Link="VariantAnnotation\CompactId.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\PredictionCache.cs" Link="VariantAnnotation\PredictionCache.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\TranscriptCacheData.cs" Link="VariantAnnotation\TranscriptCacheData.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\TranscriptCache.cs" Link="VariantAnnotation\TranscriptCache.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\CodingRegion.cs" Link="VariantAnnotation\CodingRegion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\EncodedTranscriptData.cs" Link="VariantAnnotation\EncodedTranscriptData.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\Gene.cs" Link="VariantAnnotation\Gene.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\IndexEntry.cs" Link="VariantAnnotation\IndexEntry.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\Prediction.cs" Link="VariantAnnotation\Prediction.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\RegulatoryRegion.cs" Link="VariantAnnotation\RegulatoryRegion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\RnaEdit.cs" Link="VariantAnnotation\RnaEdit.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\Transcript.cs" Link="VariantAnnotation\Transcript.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\TranscriptRegion.cs" Link="VariantAnnotation\TranscriptRegion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\DataStructures\Translation.cs" Link="VariantAnnotation\Translation.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Caches\Utilities\ExonUtilities.cs" Link="VariantAnnotation\ExonUtilities.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\JsonObject.cs" Link="VariantAnnotation\JsonObject.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\IntervalExtensions.cs" Link="VariantAnnotation\IntervalExtensions.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\Caches\CacheHeader.cs" Link="VariantAnnotation\CacheHeader.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\Caches\Header.cs" Link="VariantAnnotation\Header.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\Caches\PredictionCacheReader.cs" Link="VariantAnnotation\PredictionCacheReader.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\Caches\PredictionCacheCustomHeader.cs" Link="VariantAnnotation\PredictionCacheCustomHeader.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\Caches\PredictionHeader.cs" Link="VariantAnnotation\PredictionHeader.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\Caches\TranscriptCacheCustomHeader.cs" Link="VariantAnnotation\TranscriptCacheCustomHeader.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\IO\Caches\TranscriptCacheReader.cs" Link="VariantAnnotation\TranscriptCacheReader.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Providers\DataSourceVersion.cs" Link="VariantAnnotation\DataSourceVersion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Providers\ReferenceSequenceProvider.cs" Link="VariantAnnotation\ReferenceSequenceProvider.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Utilities\Date.cs" Link="VariantAnnotation\Date.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation\Utilities\FormatUtilities.cs" Link="VariantAnnotation\FormatUtilities.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\BioType.cs" Link="VariantAnnotation.Interface\BioType.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\ICodingRegion.cs" Link="VariantAnnotation.Interface\ICodingRegion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\ICompactId.cs" Link="VariantAnnotation.Interface\ICompactId.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\IGene.cs" Link="VariantAnnotation.Interface\IGene.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\IRegulatoryRegion.cs" Link="VariantAnnotation.Interface\IRegulatoryRegion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\IRnaEdit.cs" Link="VariantAnnotation.Interface\IRnaEdit.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\ITranscript.cs" Link="VariantAnnotation.Interface\ITranscript.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\ITranscriptRegion.cs" Link="VariantAnnotation.Interface\ITranscriptRegion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\ITranslation.cs" Link="VariantAnnotation.Interface\ITranslation.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\AnnotatedPositions\PredictionScore.cs" Link="VariantAnnotation.Interface\PredictionScore.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\Caches\IPredictionCache.cs" Link="VariantAnnotation.Interface\IPredictionCache.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\Caches\ITranscriptCache.cs" Link="VariantAnnotation.Interface\ITranscriptCache.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\Caches\RegulatoryRegionType.cs" Link="VariantAnnotation.Interface\RegulatoryRegionType.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\IO\IJsonSerializer.cs" Link="VariantAnnotation.Interface\IJsonSerializer.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\Providers\IAnnotationProvider.cs" Link="VariantAnnotation.Interface\IAnnotationProvider.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\Providers\IDataSourceVersion.cs" Link="VariantAnnotation.Interface\IDataSourceVersion.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\Providers\IProvider.cs" Link="VariantAnnotation.Interface\IProvider.cs" />
+		<Compile Include="..\Nirvana\VariantAnnotation.Interface\Providers\ISequenceProvider.cs" Link="VariantAnnotation.Interface\ISequenceProvider.cs" />
+		<Compile Include="..\Nirvana\Variants\VariantType.cs" Link="Variants\VariantType.cs" />
+		<None Include="..\Nirvana\Compression\Packages\BlockCompression\BlockCompression.dll" Link="BlockCompression.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\Nirvana\Compression\Packages\BlockCompression\BlockCompression.pdb" Link="BlockCompression.pdb">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\Nirvana\Compression\Packages\BlockCompression\libBlockCompression.so" Link="libBlockCompression.so">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\Nirvana\Compression\Packages\BlockCompression\libBlockCompression.dylib" Link="libBlockCompression.dylib">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+  </ItemGroup>
+</Project>
