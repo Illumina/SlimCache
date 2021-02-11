@@ -5,6 +5,8 @@ namespace SlimCache.Comparers
 {
     internal sealed class TranscriptRegionComparer : EqualityComparer<ITranscriptRegion>
     {
+        public static readonly TranscriptRegionComparer DefaultInstance = new();
+        
         public override bool Equals(ITranscriptRegion x, ITranscriptRegion y)
         {
             if (ReferenceEquals(x, y)) return true;

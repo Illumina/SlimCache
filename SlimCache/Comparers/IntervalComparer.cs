@@ -5,6 +5,8 @@ namespace SlimCache.Comparers
 {
     internal sealed class IntervalComparer : EqualityComparer<IInterval>
     {
+        public static readonly IntervalComparer DefaultInstance = new();
+        
         public override bool Equals(IInterval x, IInterval y)
         {
             if (ReferenceEquals(x, y)) return true;

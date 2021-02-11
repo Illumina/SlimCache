@@ -5,6 +5,8 @@ namespace SlimCache.Comparers
 {
     internal sealed class GeneComparer : EqualityComparer<IGene>
     {
+        public static readonly GeneComparer DefaultInstance = new();
+        
         public override bool Equals(IGene x, IGene y)
         {
             if (ReferenceEquals(x, y)) return true;
