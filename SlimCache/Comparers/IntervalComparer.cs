@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using Intervals;
 
 namespace SlimCache.Comparers
@@ -6,7 +7,7 @@ namespace SlimCache.Comparers
     internal sealed class IntervalComparer : EqualityComparer<IInterval>
     {
         public static readonly IntervalComparer DefaultInstance = new();
-        
+
         public override bool Equals(IInterval x, IInterval y)
         {
             if (ReferenceEquals(x, y)) return true;
@@ -14,12 +15,6 @@ namespace SlimCache.Comparers
             return x.Start == y.Start && x.End == y.End;
         }
 
-        public override int GetHashCode(IInterval obj)
-        {
-            unchecked
-            {
-                return (obj.Start * 397) ^ obj.End;
-            }
-        }
+        public override int GetHashCode(IInterval x) => HashCode.Combine(x.Start, x.End);
     }
 }

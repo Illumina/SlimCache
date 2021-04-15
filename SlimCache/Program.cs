@@ -1,9 +1,13 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using CommandLine.Utilities;
+using Genome;
+using IO;
 using SlimCache.Utilities;
 using VariantAnnotation.Caches;
 using VariantAnnotation.Interface.AnnotatedPositions;
+using VariantAnnotation.Providers;
 
 namespace SlimCache
 {
@@ -26,7 +30,14 @@ namespace SlimCache
 
             Source desiredTranscriptSource = SourceUtilities.GetSource(transcriptSource);
 
-            TranscriptCacheData cacheData = CacheLoader.LoadTranscripts(inputCachePrefix, referencePath);
+            Console.Write("- loading reference sequence... ");
+            IDictionary<ushort, IChromosome> refIndexToChromosome =
+                new ReferenceSequenceProvider(FileUtilities.GetReadStream(referencePath)).RefIndexToChromosome;
+            Console.WriteLine("finished.");
+
+            string              transcriptPath   = CacheConstants.TranscriptPath(inputCachePrefix);
+            using FileStream    transcriptStream = FileUtilities.GetReadStream(transcriptPath);
+            TranscriptCacheData cacheData        = CacheLoader.LoadTranscripts(transcriptStream, refIndexToChromosome);
 
             Console.Write("- filtering transcripts... ");
             (TranscriptCacheData filteredCacheData, int numFilteredTranscripts) = CacheFilter.FilterTranscripts(

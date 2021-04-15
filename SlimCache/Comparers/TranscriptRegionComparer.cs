@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using VariantAnnotation.Interface.AnnotatedPositions;
 
 namespace SlimCache.Comparers
@@ -6,7 +7,7 @@ namespace SlimCache.Comparers
     internal sealed class TranscriptRegionComparer : EqualityComparer<ITranscriptRegion>
     {
         public static readonly TranscriptRegionComparer DefaultInstance = new();
-        
+
         public override bool Equals(ITranscriptRegion x, ITranscriptRegion y)
         {
             if (ReferenceEquals(x, y)) return true;
@@ -19,18 +20,7 @@ namespace SlimCache.Comparers
                    x.CdnaEnd   == y.CdnaEnd;
         }
 
-        public override int GetHashCode(ITranscriptRegion obj)
-        {
-            unchecked
-            {
-                var hashCode = (int) obj.Type;
-                hashCode = (hashCode * 397) ^ obj.Id.GetHashCode();
-                hashCode = (hashCode * 397) ^ obj.Start;
-                hashCode = (hashCode * 397) ^ obj.End;
-                hashCode = (hashCode * 397) ^ obj.CdnaStart;
-                hashCode = (hashCode * 397) ^ obj.CdnaEnd;
-                return hashCode;
-            }
-        }
+        public override int GetHashCode(ITranscriptRegion x) =>
+            HashCode.Combine(x.Start, x.End, (byte) x.Type, x.Id, x.CdnaStart, x.CdnaEnd);
     }
 }

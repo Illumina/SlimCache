@@ -1,4 +1,4 @@
-﻿using VariantAnnotation.AnnotatedPositions.Transcript;
+using VariantAnnotation.AnnotatedPositions.Transcript;
 using VariantAnnotation.Caches.DataStructures;
 using VariantAnnotation.Interface.AnnotatedPositions;
 
@@ -8,23 +8,23 @@ namespace UnitTests.Resources
     {
         // TP53
         public static readonly ITranscript NM_000546 = new Transcript(Genes.TP53.Chromosome, 7668402, 7687550,
-            CompactId.Convert("NM_000546", 5), Translations.NM_000546, BioType.protein_coding, Genes.TP53, 2591, 0,
-            true, TranscriptRegions.NM_000546, 11, null, 0, 0, Source.RefSeq, false, false, null, null);
+            CompactId.Convert("NM_000546", 5), Translations.NM_000546, BioType.protein_coding, Genes.TP53, 1289, 0,
+            true, TranscriptRegions.NM_000546, 11, MicroRNAs.NM_000546_fake, 0, 0, Source.RefSeq, false, false, null, null);
 
         // ENST00000610292.4
         public static readonly ITranscript ENST00000610292 = new Transcript(Genes.TP53.Chromosome, 7668402, 7687481,
             CompactId.Convert("ENST00000610292", 4), Translations.ENST00000610292, BioType.protein_coding, Genes.TP53,
-            2591, 0,
+            1289, 0,
             true, TranscriptRegions.ENST00000610292, 11, null, 0, 0, Source.Ensembl, false, false, null, null);
 
         // NRAS
         public static readonly ITranscript NM_002524 = new Transcript(Genes.NRAS.Chromosome, 114704464, 114716894,
-            CompactId.Convert("NM_002524", 4), Translations.NM_002524, BioType.protein_coding, Genes.NRAS, 4454, 0,
+            CompactId.Convert("NM_002524", 4), Translations.NM_002524, BioType.protein_coding, Genes.NRAS, 3587, 0,
             true, TranscriptRegions.NM_002524, 7, null, 0, 0, Source.RefSeq, false, false, null, null);
 
         // KRAS
         public static readonly ITranscript NM_033360 = new Transcript(Genes.KRAS.Chromosome, 25204789, 25250931,
-            CompactId.Convert("NM_033360", 3), Translations.NM_033360, BioType.protein_coding, Genes.KRAS, 5889, 0,
+            CompactId.Convert("NM_033360", 3), Translations.NM_033360, BioType.protein_coding, Genes.KRAS, 5123, 0,
             true, TranscriptRegions.NM_033360, 6, null, 0, 0, Source.RefSeq, false, false, null, RnaEdits.NM_033360);
     }
 }

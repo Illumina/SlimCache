@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using VariantAnnotation.Interface.AnnotatedPositions;
 
 namespace SlimCache.Comparers
@@ -6,7 +7,7 @@ namespace SlimCache.Comparers
     internal sealed class GeneComparer : EqualityComparer<IGene>
     {
         public static readonly GeneComparer DefaultInstance = new();
-        
+
         public override bool Equals(IGene x, IGene y)
         {
             if (ReferenceEquals(x, y)) return true;
@@ -21,23 +22,18 @@ namespace SlimCache.Comparers
                    x.HgncId                   == y.HgncId;
         }
 
-        public override int GetHashCode(IGene obj)
+        public override int GetHashCode(IGene x)
         {
-            string entrezGeneId = obj.EntrezGeneId.WithVersion;
-            string ensemblId    = obj.EnsemblId.WithVersion;
-
-            unchecked
-            {
-                int hashCode = obj.Start;
-                hashCode = (hashCode * 397) ^ obj.End;
-                hashCode = (hashCode * 397) ^ obj.Chromosome.Index;
-                hashCode = (hashCode * 397) ^ obj.OnReverseStrand.GetHashCode();
-                hashCode = (hashCode * 397) ^ obj.Symbol.GetHashCode();
-                if (entrezGeneId != null) hashCode = (hashCode * 397) ^ entrezGeneId.GetHashCode();
-                if (ensemblId    != null) hashCode = (hashCode * 397) ^ ensemblId.GetHashCode();
-                hashCode = (hashCode * 397) ^ obj.HgncId;
-                return hashCode;
-            }
+            var hashCode = new HashCode();
+            hashCode.Add(x.Chromosome.Index);
+            hashCode.Add(x.Start);
+            hashCode.Add(x.End);
+            hashCode.Add(x.OnReverseStrand);
+            hashCode.Add(x.Symbol);
+            hashCode.Add(x.EntrezGeneId.WithVersion);
+            hashCode.Add(x.EnsemblId.WithVersion);
+            hashCode.Add(x.HgncId);
+            return hashCode.ToHashCode();
         }
     }
 }

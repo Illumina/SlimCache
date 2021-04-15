@@ -1,27 +1,23 @@
-﻿using System;
-using IO;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Genome;
 using VariantAnnotation.Caches;
 using VariantAnnotation.IO.Caches;
-using VariantAnnotation.Providers;
 
 namespace SlimCache
 {
     public static class CacheLoader
     {
-        public static TranscriptCacheData LoadTranscripts(string inputCachePrefix, string referencePath)
+        public static TranscriptCacheData LoadTranscripts(Stream                           stream,
+                                                          IDictionary<ushort, IChromosome> refIndexToChromosome)
         {
-            Console.Write("- loading reference sequence... ");
-            var sequenceProvider = new ReferenceSequenceProvider(FileUtilities.GetReadStream(referencePath));
-            Console.WriteLine("finished.");
-
+            TranscriptCacheData cacheData;
             Console.Write("- loading cache... ");
 
-            string transcriptPath = CacheConstants.TranscriptPath(inputCachePrefix);
-
-            TranscriptCacheData cacheData;
-            using (var reader = new TranscriptCacheReader(FileUtilities.GetReadStream(transcriptPath)))
+            using (var reader = new TranscriptCacheReader(stream))
             {
-                cacheData = reader.Read(sequenceProvider.RefIndexToChromosome);
+                cacheData = reader.Read(refIndexToChromosome);
             }
 
             Console.WriteLine("finished.");
