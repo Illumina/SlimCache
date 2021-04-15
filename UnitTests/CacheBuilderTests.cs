@@ -33,8 +33,8 @@ namespace UnitTests
 
             Assert.Equal(3, observed.Genes.Length);
             Assert.Equal(8, observed.TranscriptRegions.Length);
-            Assert.Null(observed.Mirnas);
-            Assert.Equal(4,   observed.PeptideSeqs.Length);
+            Assert.Equal(3, observed.Mirnas.Length);
+            Assert.Equal(4, observed.PeptideSeqs.Length);
             
             Assert.Equal(Chromosomes.NumRefSeqs, observed.TranscriptIntervalArrays.Length);
             Assert.Equal(2,   observed.TranscriptIntervalArrays[Chromosomes.Chr17.Index].Array.Length);

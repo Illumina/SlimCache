@@ -37,7 +37,7 @@ namespace UnitTests
             Assert.Equal(1,      numFilteredTranscripts);
             Assert.Equal(source, chr17Transcripts[0].Value.Source);
             Assert.Single(filteredCacheData.Genes);
-            Assert.Null(filteredCacheData.Mirnas);
+            Assert.Equal(3, filteredCacheData.Mirnas.Length);
             Assert.Single(filteredCacheData.PeptideSeqs);
             Assert.Equal(3, filteredCacheData.RegulatoryRegionIntervalArrays[Chromosomes.Chr17.Index].Array.Length);
         }
