@@ -70,7 +70,7 @@ namespace UnitTests.Utilities
         [Fact]
         public void Sort_string_ExpectedResults()
         {
-            var strings = new HashSet<string>()
+            var strings = new HashSet<string>
             {
                 "seven",
                 "ten",

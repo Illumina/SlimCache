@@ -25,7 +25,7 @@ namespace UnitTests.Resources
             {
                 new(ENSR00000089836.Start, ENSR00000089836.End, ENSR00000089836),
                 new(ENSR00000282026.Start, ENSR00000282026.End, ENSR00000282026),
-                new(ENSR00000089837.Start, ENSR00000089837.End, ENSR00000089837),
+                new(ENSR00000089837.Start, ENSR00000089837.End, ENSR00000089837)
             };
 
             Chr17[Chromosomes.Chr17.Index] = new IntervalArray<IRegulatoryRegion>(chr17Regions);

@@ -1,6 +1,6 @@
-﻿using Xunit;
-using SlimCache.Comparers;
+﻿using SlimCache.Comparers;
 using UnitTests.Resources;
+using Xunit;
 
 namespace UnitTests.Comparers
 {

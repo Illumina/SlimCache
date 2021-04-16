@@ -7,10 +7,10 @@ namespace UnitTests.Resources
         public static readonly Prediction.Entry[] Lut;
         public static readonly Prediction[][]     PredictionsPerRef;
 
-        public static readonly Prediction NM_000546;
-        public static readonly Prediction ENST00000610292;
-        public static readonly Prediction NM_002524;
-        public static readonly Prediction Unused;
+        private static readonly Prediction NM_000546;
+        private static readonly Prediction ENST00000610292;
+        private static readonly Prediction NM_002524;
+        private static readonly Prediction Unused;
 
         static PolyPhen()
         {
