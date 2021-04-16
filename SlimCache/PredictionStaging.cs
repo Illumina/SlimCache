@@ -10,25 +10,25 @@ namespace SlimCache
 {
     public sealed class PredictionStaging
     {
-        private readonly Prediction.Entry[] _lut;
-        private readonly Prediction[][]     _predictionsPerRef;
+        public readonly Prediction.Entry[] Lut;
+        public readonly Prediction[][]     PredictionsPerRef;
 
         public PredictionStaging(Prediction.Entry[] lut, Prediction[][] predictionsPerRef)
         {
-            _lut               = lut;
-            _predictionsPerRef = predictionsPerRef;
+            Lut               = lut;
+            PredictionsPerRef = predictionsPerRef;
         }
 
         public void Write(BlockStream blockStream, GenomeAssembly genomeAssembly)
         {
             using var writer = new BinaryWriter(blockStream);
 
-            var indexEntries = new IndexEntry[_predictionsPerRef.Length];
+            var indexEntries = new IndexEntry[PredictionsPerRef.Length];
 
             Header header       = HeaderUtilities.GetHeader(Source.None, genomeAssembly);
             var    customHeader = new PredictionCacheCustomHeader(indexEntries);
 
-            var predictionHeader = new PredictionHeader(header, customHeader, _lut);
+            var predictionHeader = new PredictionHeader(header, customHeader, Lut);
             blockStream.WriteHeader(predictionHeader.Write);
 
             WriteLookupTable(writer);
@@ -39,15 +39,15 @@ namespace SlimCache
 
         private void WriteLookupTable(BinaryWriter writer)
         {
-            writer.Write(_lut.Length);
-            foreach (Prediction.Entry entry in _lut) entry.Write(writer);
+            writer.Write(Lut.Length);
+            foreach (Prediction.Entry entry in Lut) entry.Write(writer);
         }
 
         private void WritePredictions(BlockStream blockStream, BinaryWriter writer, IndexEntry[] indexEntries)
         {
-            for (var refIndex = 0; refIndex < _predictionsPerRef.Length; refIndex++)
+            for (var refIndex = 0; refIndex < PredictionsPerRef.Length; refIndex++)
             {
-                Prediction[] refPredictions = _predictionsPerRef[refIndex];
+                Prediction[] refPredictions = PredictionsPerRef[refIndex];
 
                 (long fileOffset, _)              = blockStream.GetBlockPosition();
                 indexEntries[refIndex].FileOffset = fileOffset;

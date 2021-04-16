@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using CacheUtils.Utilities;
-using Genome;
+﻿using System.Collections.Generic;
 using Intervals;
 using SlimCache;
 using UnitTests.Resources;
 using VariantAnnotation.Caches;
 using VariantAnnotation.Interface.AnnotatedPositions;
-using VariantAnnotation.IO.Caches;
 using Xunit;
 
 namespace UnitTests

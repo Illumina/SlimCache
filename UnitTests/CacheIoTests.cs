@@ -26,7 +26,7 @@ namespace UnitTests
             Assert.Equal(cacheData, newCacheData, TranscriptCacheDataComparer.DefaultInstance);
         }
 
-        private static TranscriptCacheData GetCacheData()
+        public static TranscriptCacheData GetCacheData()
         {
             CacheHeader                        header                         = GetCacheHeader();
             IGene[]                            genes                          = GetGenes();
