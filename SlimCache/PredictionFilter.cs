@@ -60,6 +60,8 @@ namespace SlimCache
                                                  Func<ITranscript, int>     predictionFunc, Prediction[] predictions,
                                                  Prediction                 unusedPrediction)
         {
+            if (transcriptIntervalArray == null) return 0;
+            
             var usedPredictions = new HashSet<int>();
 
             foreach (Interval<ITranscript> interval in transcriptIntervalArray.Array)

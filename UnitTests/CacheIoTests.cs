@@ -65,7 +65,8 @@ namespace UnitTests
             {
                 new IntervalArray<ITranscript>(new[] {transcript}),
                 new IntervalArray<ITranscript>(new[] {transcript2}),
-                new IntervalArray<ITranscript>(new[] {transcript3, transcript4})
+                new IntervalArray<ITranscript>(new[] {transcript3, transcript4}),
+                null
             };
         }
 

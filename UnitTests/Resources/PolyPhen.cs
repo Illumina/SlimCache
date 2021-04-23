@@ -46,7 +46,7 @@ namespace UnitTests.Resources
             NM_002524       = new Prediction(data3, Lut);
             Unused          = new Prediction(data4, Lut);
 
-            PredictionsPerRef    = new Prediction[3][];
+            PredictionsPerRef    = new Prediction[4][];
             PredictionsPerRef[0] = new[] {NM_002524, Unused};
             PredictionsPerRef[2] = new[] {ENST00000610292, NM_000546};
         }
