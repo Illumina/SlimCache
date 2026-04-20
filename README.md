@@ -2,6 +2,7 @@
 
 SlimCache is standalone tool that creates a new set of Nirvana cache files containing only transcripts from the desired transcript source.
 
+SlimCache is licensed under [PolyForm Strict License 1.0.0](https://github.com/Illumina/SlimCache/blob/main/LICENSE) 
 ## Building
 
 Remember to clone the git repo using the recursive option - this will automatically handle the Nirvana submodule:
